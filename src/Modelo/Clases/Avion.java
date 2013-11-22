@@ -7,6 +7,9 @@ public class Avion {
     private int peso;
     private double dimensionLargo;
     private double dimensionAncho;
+    private int cont;
+    private String prueba;
+    
 
     public Avion(int codigo, String Companya, int capacidad, int peso, double dimensionLargo, double dimensionAncho) {
         this.codigo = codigo;
