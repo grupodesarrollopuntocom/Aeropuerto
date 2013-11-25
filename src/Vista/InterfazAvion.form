@@ -6,7 +6,6 @@
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
-    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
   </SyntheticProperties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -87,7 +86,7 @@
                               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="jButton6" max="32767" attributes="0"/>
-                                  <Component id="jButton8" max="32767" attributes="0"/>
+                                  <Component id="btVerTripulante" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -112,7 +111,7 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jButton7" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton8" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btVerTripulante" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -154,10 +153,13 @@
                 <Property name="text" type="java.lang.String" value="Editar"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton8">
+            <Component class="javax.swing.JButton" name="btVerTripulante">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ver"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btVerTripulanteActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -176,7 +178,10 @@
                               <EmptySpace min="-2" pref="118" max="-2" attributes="0"/>
                               <Component id="btanadirPasajero" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
-                              <Component id="btborrarPasajero" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="btVerPasajero" max="32767" attributes="0"/>
+                                  <Component id="btborrarPasajero" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
@@ -193,6 +198,8 @@
                           <Component id="btanadirPasajero" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btborrarPasajero" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btVerPasajero" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -232,6 +239,14 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Borrar"/>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="btVerPasajero">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Ver"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btVerPasajeroActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

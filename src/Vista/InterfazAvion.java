@@ -18,10 +18,12 @@ public class InterfazAvion extends javax.swing.JFrame {
 
     private ArrayList datosTabla=new ArrayList();
     InterfazDatosPersona interfazDatosPersona;
+    IntefazInfoPersona intefazInfoPersona;
  
     public InterfazAvion() {
         initComponents();
         interfazDatosPersona = new InterfazDatosPersona();
+        intefazInfoPersona  =new IntefazInfoPersona();
         
        //inicalizando prueba
         
@@ -72,12 +74,13 @@ public class InterfazAvion extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
+        btVerTripulante = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         btanadirPasajero = new javax.swing.JButton();
         btborrarPasajero = new javax.swing.JButton();
+        btVerPasajero = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -96,7 +99,12 @@ public class InterfazAvion extends javax.swing.JFrame {
 
         jButton7.setText("Editar");
 
-        jButton8.setText("Ver");
+        btVerTripulante.setText("Ver");
+        btVerTripulante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btVerTripulanteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -112,7 +120,7 @@ public class InterfazAvion extends javax.swing.JFrame {
                         .addGap(30, 30, 30)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(btVerTripulante, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(74, 74, 74)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -130,7 +138,7 @@ public class InterfazAvion extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton7)
-                    .addComponent(jButton8))
+                    .addComponent(btVerTripulante))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -156,6 +164,13 @@ public class InterfazAvion extends javax.swing.JFrame {
 
         btborrarPasajero.setText("Borrar");
 
+        btVerPasajero.setText("Ver");
+        btVerPasajero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btVerPasajeroActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -169,7 +184,9 @@ public class InterfazAvion extends javax.swing.JFrame {
                         .addGap(118, 118, 118)
                         .addComponent(btanadirPasajero)
                         .addGap(58, 58, 58)
-                        .addComponent(btborrarPasajero)))
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btVerPasajero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btborrarPasajero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -181,6 +198,8 @@ public class InterfazAvion extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btanadirPasajero)
                     .addComponent(btborrarPasajero))
+                .addGap(18, 18, 18)
+                .addComponent(btVerPasajero)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -229,6 +248,14 @@ public class InterfazAvion extends javax.swing.JFrame {
         interfazDatosPersona.setVisible(true);
     }//GEN-LAST:event_btanadirPasajeroActionPerformed
 
+    private void btVerPasajeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVerPasajeroActionPerformed
+      intefazInfoPersona.setVisible(true);
+    }//GEN-LAST:event_btVerPasajeroActionPerformed
+
+    private void btVerTripulanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVerTripulanteActionPerformed
+      intefazInfoPersona.setVisible(true);
+    }//GEN-LAST:event_btVerTripulanteActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -264,12 +291,13 @@ public class InterfazAvion extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btVerPasajero;
+    private javax.swing.JButton btVerTripulante;
     private javax.swing.JButton btanadirPasajero;
     private javax.swing.JButton btborrarPasajero;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
     private javax.swing.JList jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
