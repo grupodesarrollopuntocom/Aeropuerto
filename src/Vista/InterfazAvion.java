@@ -36,6 +36,13 @@ public class InterfazAvion extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                interfazDatosPersona.setVisible(true);
+               
+                  //Holamundohola
+              // if(JOptionPane.showConfirmDialog(null, interfazDatosPersona, "Introduzca datos", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE)==JOptionPane.OK_OPTION)
+              //  modeloTablaPasajeros.anadirFila(interfazDatosPersona.datosVector());
+               
+             //  modeloTablaPasajeros.anadirFila(interfazDatosPersona.datosVector());
+             //  jTable1.setModel(modeloTablaPasajeros);
             }
         });
         
