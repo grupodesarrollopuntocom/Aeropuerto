@@ -1,107 +1,64 @@
-
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Modelo.Clases;
+
+/**
+ *
+ * @author DAM
+ */
 public class Avion {
-    private int codigo;
-    private String Companya;
-    private int capacidad;
-    private int peso;
-    private double dimensionLargo;
-    private double dimensionAncho;
-    private int cont;
-    private String prueba;
-    
+    private int idAvion;
+    private String matricula;
+    private String modelo;
+    private int numeroAsientos;
 
-    public Avion(int codigo, String Companya, int capacidad, int peso, double dimensionLargo, double dimensionAncho) {
-        this.codigo = codigo;
-        this.Companya = Companya;
-        this.capacidad = capacidad;
-        this.peso = peso;
-        this.dimensionLargo = dimensionLargo;
-        this.dimensionAncho = dimensionAncho;
-    }
-    /**
-     * @return the codigo
-     */
-    public int getCodigo() {
-        return codigo;
+    public Avion(int idAvion, String matricula, String modelo, int numeroAsientos) {
+        this.idAvion = idAvion;
+        this.matricula = matricula;
+        this.modelo = modelo;
+        this.numeroAsientos = numeroAsientos;
     }
 
-    /**
-     * @param codigo the codigo to set
-     */
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
+    public int getIdAvion() {
+        return idAvion;
     }
 
-    /**
-     * @return the Companya
-     */
-    public String getCompanya() {
-        return Companya;
+    public void setIdAvion(int idAvion) {
+        this.idAvion = idAvion;
     }
 
-    /**
-     * @param Companya the Companya to set
-     */
-    public void setCompanya(String Companya) {
-        this.Companya = Companya;
+    public String getMatricula() {
+        return matricula;
     }
 
-    /**
-     * @return the capacidad
-     */
-    public int getCapacidad() {
-        return capacidad;
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
     }
 
-    /**
-     * @param capacidad the capacidad to set
-     */
-    public void setCapacidad(int capacidad) {
-        this.capacidad = capacidad;
+    public String getModelo() {
+        return modelo;
     }
 
-    /**
-     * @return the peso
-     */
-    public int getPeso() {
-        return peso;
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
     }
 
-    /**
-     * @param peso the peso to set
-     */
-    public void setPeso(int peso) {
-        this.peso = peso;
+    public int getNumeroAsientos() {
+        return numeroAsientos;
     }
 
-    /**
-     * @return the dimensionLargo
-     */
-    public double getDimensionLargo() {
-        return dimensionLargo;
+    public void setNumeroAsientos(int numeroAsientos) {
+        this.numeroAsientos = numeroAsientos;
     }
-
-    /**
-     * @param dimensionLargo the dimensionLargo to set
-     */
-    public void setDimensionLargo(double dimensionLargo) {
-        this.dimensionLargo = dimensionLargo;
+    public void altaAvion(){
+        
     }
-
-    /**
-     * @return the dimensionAncho
-     */
-    public double getDimensionAncho() {
-        return dimensionAncho;
+    public void bajaAvion(){
+        
     }
-
-    /**
-     * @param dimensionAncho the dimensionAncho to set
-     */
-    public void setDimensionAncho(double dimensionAncho) {
-        this.dimensionAncho = dimensionAncho;
+    public void modificarAvion(){
+        
     }
-    
-    
 }

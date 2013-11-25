@@ -1,19 +1,28 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Modelo.Clases;
 
+/**
+ *
+ * @author DAM
+ */
 public class Trayecto {
-
     private int idTrayecto;
+    private String aropueto;
+    private String ciudad;
+    private String pais;
     private String origen;
     private String destino;
-    private int asientosLibres;
-    private int asientosOcupados;
 
-    public Trayecto(int idTrayecto, String origen, String destino, int asientosLibres, int asientosOcupados) {
+    public Trayecto(int idTrayecto, String aropueto, String ciudad, String pais, String origen, String destino) {
         this.idTrayecto = idTrayecto;
+        this.aropueto = aropueto;
+        this.ciudad = ciudad;
+        this.pais = pais;
         this.origen = origen;
         this.destino = destino;
-        this.asientosLibres = asientosLibres;
-        this.asientosOcupados = asientosOcupados;
     }
 
     public int getIdTrayecto() {
@@ -22,6 +31,30 @@ public class Trayecto {
 
     public void setIdTrayecto(int idTrayecto) {
         this.idTrayecto = idTrayecto;
+    }
+
+    public String getAropueto() {
+        return aropueto;
+    }
+
+    public void setAropueto(String aropueto) {
+        this.aropueto = aropueto;
+    }
+
+    public String getCiudad() {
+        return ciudad;
+    }
+
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
+    }
+
+    public String getPais() {
+        return pais;
+    }
+
+    public void setPais(String pais) {
+        this.pais = pais;
     }
 
     public String getOrigen() {
@@ -39,20 +72,15 @@ public class Trayecto {
     public void setDestino(String destino) {
         this.destino = destino;
     }
-
-    public int getAsientosLibres() {
-        return asientosLibres;
+    public void altaTrayecto(){
+        
     }
-
-    public void setAsientosLibres(int asientosLibres) {
-        this.asientosLibres = asientosLibres;
+    public void bajaTrayecto(){
+        
     }
-
-    public int getAsientosOcupados() {
-        return asientosOcupados;
+    public void modificarTrayecto(){
+        
     }
-
-    public void setAsientosOcupados(int asientosOcupados) {
-        this.asientosOcupados = asientosOcupados;
-    }
+    
+    
 }
