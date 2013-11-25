@@ -19,7 +19,7 @@ public class PrincipalVuelo extends javax.swing.JFrame {
     public PrincipalVuelo() {
         initComponents();
         
-       
+       //
         
         datosTabla.add(new String[]{"1","2","3","4","5","6"});
         final ModeloTablaVuelo modeloTablaVuelo = new ModeloTablaVuelo(datosTabla); 
