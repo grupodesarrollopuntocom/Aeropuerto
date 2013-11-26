@@ -4,7 +4,7 @@
  */
 package Vista;
 
-import Modelo.Clases.ModeloTablaPasajeros;
+import Modelo.Tabla.ModeloTablaPasajeros;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;

@@ -1,5 +1,5 @@
 
-package Modelo.Clases;
+package Modelo.Tabla;
 
 
 import java.util.ArrayList;

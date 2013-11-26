@@ -4,7 +4,7 @@
  */
 package Vista;
 
-import Modelo.Clases.ModeloTablaPasajeros;
+import Modelo.Tabla.ModeloTablaPasajeros;
 
 /**
  *
