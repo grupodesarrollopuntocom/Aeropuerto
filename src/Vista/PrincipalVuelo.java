@@ -5,6 +5,7 @@
 package Vista;
 
 
+
 import Modelo.Tabla.ModeloTablaVuelo;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,12 +14,13 @@ import java.util.ArrayList;
 public class PrincipalVuelo extends javax.swing.JFrame {
 
    
-    InterfazAvion interfazAvion = new InterfazAvion();
+    InterfazAvion interfazAvion;
     private ArrayList datosTabla=new ArrayList();
     
     public PrincipalVuelo() {
         initComponents();
         
+        interfazAvion = new InterfazAvion(this, rootPaneCheckingEnabled);
        //
         
         datosTabla.add(new String[]{"1","2","3","4","5","6"});
