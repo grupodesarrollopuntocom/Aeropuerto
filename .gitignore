@@ -4,4 +4,9 @@
 *.jar
 *.war
 *.ear
+<<<<<<< HEAD
 /nbproject/private/
+=======
+/nbproject/private/
+/build/
+>>>>>>> branch 'Roberto' of https://github.com/grupodesarrollopuntocom/Aeropuerto.git
