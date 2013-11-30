@@ -4,18 +4,28 @@
  */
 package Modelo.Clases;
 
+import Controlador.Controlador;
+import Vista.Login;
+
 /**
  *
  * @author DAM
  */
 public class ProyectoAeropuerto {
 
-    /**
-     * @param args the command line arguments
-     */
+ 
+   
+
+    
+           
+    
     public static void main(String[] args) {
-        System.out.println("hola");
-        System.out.println("adios");
-        
+       
+         ModeloLogin modeloLogin = new ModeloLogin();
+         Login login = new Login();
+         Controlador controlador = new Controlador(login, modeloLogin);
+         
+         login.setVisible(true);
+         
     }
 }
