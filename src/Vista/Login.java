@@ -7,11 +7,14 @@ package Vista;
 
 public class Login extends javax.swing.JFrame {
 
+   
+    
     /**
      * Creates new form Login
      */
     public Login() {
         initComponents();
+       
     }
 
     /**
@@ -90,6 +93,11 @@ public class Login extends javax.swing.JFrame {
         });
 
         btRegistrar.setText("Registrar");
+        btRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btRegistrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -148,6 +156,10 @@ public class Login extends javax.swing.JFrame {
     private void btEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEntrarActionPerformed
                 // TODO add your handling code here:
     }//GEN-LAST:event_btEntrarActionPerformed
+
+    private void btRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btRegistrarActionPerformed
+        
+    }//GEN-LAST:event_btRegistrarActionPerformed
 
     /**
      * @param args the command line arguments
