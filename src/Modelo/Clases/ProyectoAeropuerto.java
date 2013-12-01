@@ -4,9 +4,12 @@
  */
 package Modelo.Clases;
 
+import Archivos.Archivo;
 import Controlador.Controlador;
 import Vista.Login;
 import Vista.Registro;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 /**
  *
@@ -16,8 +19,11 @@ public class ProyectoAeropuerto {
 
  
    
-      public static void main(String[] args) {
+      public static void main(String[] args) throws FileNotFoundException, IOException {
        
+          
+         
+         
          ModeloLogin modeloLogin = new ModeloLogin();
          Login login = new Login();
          Registro registro = new Registro(login, true);

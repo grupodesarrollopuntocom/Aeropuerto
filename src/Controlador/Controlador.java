@@ -1,6 +1,7 @@
 
 package Controlador;
 
+import Archivos.Archivo;
 import Modelo.Clases.ModeloLogin;
 import Modelo.Clases.ModeloRegistro;
 import Vista.Login;
@@ -8,21 +9,28 @@ import Vista.Registro;
 import Vista.prueba;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.smartcardio.CommandAPDU;
 import javax.swing.text.View;
 
 
 public class Controlador implements ActionListener{
 
-    
+    private Archivo archivo = new Archivo();
     private Login login; 
     private ModeloLogin modeloLogin;
-    private prueba pru;
+    
     private ModeloRegistro modeloRegistro = new ModeloRegistro();
+    
     
     private Registro registro = new Registro(login, true);;
     
-    
+   
     
 
     public Controlador(Login login, ModeloLogin modeloLogin) {
@@ -42,9 +50,8 @@ public class Controlador implements ActionListener{
        this.registro.botonAceptar.setActionCommand("Aceptar");
        this.registro.botonAceptar.addActionListener(this);
       
-       
-}
-   
+    }
+    
     @Override
     public void actionPerformed(ActionEvent e) {
     
@@ -54,11 +61,32 @@ public class Controlador implements ActionListener{
         //Acceso al boton aceptar de la interfaz login
         if(comando.equals("Entrar")){
         
-            String nombre, password;
+           String nombre, password;
+            
+            Vector v = new Vector();
+            int i = 0;
+           
+            
+            
+            
             nombre = login.textNombre.getText();
             password = login.textPassword.getText();
             
+            v.addElement(nombre);
+            v.addElement(password);
+            
+            while (i < 2){                
+                
+                
+             archivo.crearTxt("logins.txt", v.elementAt(i).toString()+"\n");
+                
+                
+            }
+            
+            
             modeloLogin.compruebaDatos(nombre, password);
+            
+            
             
           }   
         
@@ -74,8 +102,6 @@ public class Controlador implements ActionListener{
             
           String nombre, apellido1, apellido2, dni, telefono, direccion, correo, edad;  
           
-          
-   
           nombre = registro.textNombre.getText();
           apellido1 = registro.textApellido1.getText();
           apellido2 = registro.textApellido2.getText();
@@ -86,8 +112,6 @@ public class Controlador implements ActionListener{
           correo = registro.textCorreo.getText();
           
           modeloRegistro.recogeDatos(nombre, apellido1, apellido2, direccion, dni, edad, correo, telefono);
-          
-          
           modeloRegistro = new ModeloRegistro();
           
             modeloRegistro.recogeDatos(nombre, apellido1, apellido2, direccion, dni, edad, correo, telefono);
