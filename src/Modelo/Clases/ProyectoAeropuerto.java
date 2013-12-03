@@ -4,18 +4,33 @@
  */
 package Modelo.Clases;
 
+import Archivos.Archivo;
+import Controlador.Controlador;
+import Vista.Login;
+import Vista.Registro;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 /**
  *
  * @author DAM
  */
 public class ProyectoAeropuerto {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        System.out.println("hola");
-        System.out.println("adios");
-        
+ 
+   
+      public static void main(String[] args) throws FileNotFoundException, IOException {
+       
+          
+         
+         
+         ModeloLogin modeloLogin = new ModeloLogin();
+         Login login = new Login();
+         Registro registro = new Registro(login, true);
+         Controlador controlador = new Controlador(login, modeloLogin);
+         
+         
+         login.setVisible(true);
+         
     }
 }
