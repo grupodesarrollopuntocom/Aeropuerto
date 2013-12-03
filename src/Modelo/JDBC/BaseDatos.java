@@ -36,7 +36,10 @@ public class BaseDatos {
             PreparedStatement pstm = conn.prepareStatement("SELECT * FROM personal");
             ResultSet res = pstm.executeQuery();
             while(res.next()){
-                System.out.println (res.getInt (1) + " " + res.getString (2)+ " " + res.getString(3)); 
+                //System.out.println (res.getInt (1) + " " + res.getString (2)+ " " + res.getString(3)); 
+                lista.add(res.getString(2));
+                lista.add(res.getString(3));
+                
             }
         } catch (Exception e) {
             System.out.println("ERROR EN LAS CONSULTA");

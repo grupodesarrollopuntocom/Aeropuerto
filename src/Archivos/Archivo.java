@@ -9,6 +9,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Vector;
 
 
 public class Archivo {
@@ -21,13 +22,13 @@ public class Archivo {
         
         String temp = this.leer(nombre);
         temp = temp + texto;
-        this.crearTxt(nombre, temp);
+        this.crearTxt(nombre);
         
     }
     
     
     
-    public void crearTxt(String nombre, String texto){
+    public void crearTxt(String nombre){
         
         File f;
         FileWriter escritorArchivo;
@@ -38,9 +39,9 @@ public class Archivo {
             PrintWriter salida = new PrintWriter(bw);
             
             
-            salida.write(texto+"\n");
+            //salida.write(texto+"\n");
             
-            salida.close();
+            //salida.close();
             bw.close();
             
         } catch (Exception e) {
@@ -82,5 +83,37 @@ public class Archivo {
         return null;
         
     }
+    
+    public void escribe(Vector v){
+        
+        File f;              //creo el archivo
+        FileWriter fw;
+        PrintWriter pw;
+        
+        //for (int i = 0; i < v.size(); i++) {
+            //System.out.println(v.get(i));
+            
+            
+            
+        //}
+        
+        try {
+            
+            fw = new FileWriter("gabrimaarica.txt");  //creo el flujo hacia f
+            pw = new PrintWriter(fw); //permite la escritura
+            
+            for (int i = 0; i < v.size(); i++) {
+               
+                 pw.println(v.get(i));          //se introduce valor de i en el archivo
+            }
+            
+            fw.close();
+        } catch (Exception e) {
+            
+            System.out.println("Error al escribir");
+        }
+        
+    }
+    
     
  }
