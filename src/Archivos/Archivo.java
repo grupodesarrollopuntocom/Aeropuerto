@@ -48,7 +48,6 @@ public class Archivo {
         
    }
     
-    
     public String leer(String nombre) throws FileNotFoundException, IOException{
         
         
@@ -84,8 +83,4 @@ public class Archivo {
         
     }
     
-    
-    
-    
-    
-}
+ }

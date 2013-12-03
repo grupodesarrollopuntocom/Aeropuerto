@@ -119,7 +119,8 @@ public class Controlador implements ActionListener{
             login.setVisible(true);
             System.out.println("entra");
             registro.dispose();
-    }
+    
+  }
       
         
         
