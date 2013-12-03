@@ -6,7 +6,6 @@ import Modelo.Clases.ModeloLogin;
 import Modelo.Clases.ModeloRegistro;
 import Vista.Login;
 import Vista.Registro;
-import Vista.prueba;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
