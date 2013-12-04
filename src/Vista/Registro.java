@@ -45,7 +45,7 @@ public class Registro extends javax.swing.JDialog {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         textEdad = new javax.swing.JTextField();
-        botonAceptar = new javax.swing.JButton();
+        botonRegistroUsuario = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -76,7 +76,7 @@ public class Registro extends javax.swing.JDialog {
 
         jLabel9.setText("Edad");
 
-        botonAceptar.setText("Aceptar");
+        botonRegistroUsuario.setText("Registrar user");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -84,7 +84,7 @@ public class Registro extends javax.swing.JDialog {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(botonAceptar)
+                .addComponent(botonRegistroUsuario)
                 .addGap(99, 99, 99))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
@@ -150,7 +150,7 @@ public class Registro extends javax.swing.JDialog {
                     .addComponent(jLabel9)
                     .addComponent(textEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(botonAceptar)
+                .addComponent(botonRegistroUsuario)
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
@@ -219,7 +219,7 @@ public class Registro extends javax.swing.JDialog {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton botonAceptar;
+    public javax.swing.JButton botonRegistroUsuario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

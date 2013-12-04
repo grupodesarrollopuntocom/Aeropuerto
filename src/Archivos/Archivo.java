@@ -22,7 +22,7 @@ public class Archivo {
         
         String temp = this.leer(nombre);
         temp = temp + texto;
-        this.crearTxt(nombre);
+        //this.crearTxt(nombre);
         
     }
     
@@ -48,6 +48,8 @@ public class Archivo {
         }
         
    }
+    
+   
     
     public String leer(String nombre) throws FileNotFoundException, IOException{
         
@@ -99,7 +101,7 @@ public class Archivo {
         
         try {
             
-            fw = new FileWriter("gabrimaarica.txt");  //creo el flujo hacia f
+            fw = new FileWriter("archivo.txt");  //creo el flujo hacia f
             pw = new PrintWriter(fw); //permite la escritura
             
             for (int i = 0; i < v.size(); i++) {

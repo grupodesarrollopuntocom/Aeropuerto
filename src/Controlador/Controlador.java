@@ -4,7 +4,10 @@ import Archivos.Archivo;
 import Modelo.Clases.ModeloLogin;
 import Modelo.Clases.ModeloRegistro;
 import Modelo.JDBC.BaseDatos;
+import Vista.InterfazAvion;
+import Vista.InterfazDatosPersona;
 import Vista.Login;
+import Vista.PrincipalVuelo;
 import Vista.Registro;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -25,6 +28,9 @@ public class Controlador implements ActionListener {
     private ModeloRegistro modeloRegistro = new ModeloRegistro();
     private Registro registro = new Registro(login, true);
     private BaseDatos bd;
+    private InterfazDatosPersona interfazDatosPersona = new InterfazDatosPersona(login, true);
+    private PrincipalVuelo principalVuelo = new PrincipalVuelo();
+    private InterfazAvion interfazAvion = new InterfazAvion(login, true);
 
     
     
@@ -45,9 +51,14 @@ public class Controlador implements ActionListener {
         this.login.btEntrar.addActionListener(this);
         this.login.btRegistrar.setActionCommand("Registrar");
         this.login.btRegistrar.addActionListener(this);
-        this.registro.botonAceptar.setActionCommand("Aceptar");
-        this.registro.botonAceptar.addActionListener(this);
-
+        this.registro.botonRegistroUsuario.setActionCommand("Registrar user");
+        this.registro.botonRegistroUsuario.addActionListener(this);
+        this.interfazDatosPersona.btAceptarPersona.setActionCommand("Aceptarpersona");
+        this.interfazDatosPersona.btAceptarPersona.addActionListener(this);
+        this.interfazAvion.btAceptarVuelo.setActionCommand("Aceptar vuelo");
+        this.interfazAvion.btAceptarVuelo.addActionListener(this);
+        
+        
     }
 
     @Override
@@ -55,7 +66,7 @@ public class Controlador implements ActionListener {
 
         String comando = e.getActionCommand();
 
-
+        //INTERFAZ LOGIN
         //Acceso al boton aceptar de la interfaz login
         if (comando.equals("Entrar")) {
            
@@ -73,10 +84,8 @@ public class Controlador implements ActionListener {
             
            
            
-            archivo.crearTxt("gabrimaarica.txt");
-            
+            archivo.crearTxt("login.txt");
             modeloLogin.compruebaDatos(nombre, password);
-            
             archivo.escribe(v);
             
            /*
@@ -102,18 +111,21 @@ public class Controlador implements ActionListener {
             */
 
         }
-
+        
         //Acceso al boton registrar de la interfaz login
         if (comando.equals("Registrar")) {
             registro.setVisible(true);
 
         }
 
+        //INTERFAZ REGISTRO
         //Acceso a el boton aceptar de la interfaz registro
-        if (comando.equals("Aceptar")) {
+        if (comando.equals("Registrar user")) {
 
             String nombre, apellido1, apellido2, dni, telefono, direccion, correo, edad;
-
+            Vector v = new Vector();
+            
+            
             nombre = registro.textNombre.getText();
             apellido1 = registro.textApellido1.getText();
             apellido2 = registro.textApellido2.getText();
@@ -123,6 +135,20 @@ public class Controlador implements ActionListener {
             edad = registro.textEdad.getText();
             correo = registro.textCorreo.getText();
 
+            v.addElement(nombre);
+            v.addElement(apellido1);
+            v.addElement(apellido2);
+            v.addElement(dni);
+            v.addElement(telefono);
+            v.addElement(direccion);
+            v.addElement(edad);
+            v.addElement(correo);
+           
+            
+            archivo.crearTxt("registro.txt");
+            archivo.escribe(v);
+            System.out.println("Entra");
+            /*
             modeloRegistro.recogeDatos(nombre, apellido1, apellido2, direccion, dni, edad, correo, telefono);
             modeloRegistro = new ModeloRegistro();
 
@@ -130,11 +156,73 @@ public class Controlador implements ActionListener {
             modeloRegistro.guardaDatos(modeloRegistro);
             login.setVisible(true);
             System.out.println("entra");
-            registro.dispose();
+            registro.dispose();*/
 
         }
-
-
-
-    }
+        
+        
+        //INTERFAZ DATOS PERSONA
+        
+       if (comando.equals("Aceptarpersona")) {
+           
+           String nombre, apellido1, apellido2, dni, telefono, direccion, edad, correo;
+           Vector v = new Vector();
+           
+           nombre = interfazDatosPersona.textNombre.getText();
+           apellido1 = interfazDatosPersona.textApellido1.getText();
+           apellido2 = interfazDatosPersona.textApellido2.getText();
+           dni = interfazDatosPersona.textDni.getText();
+           direccion = interfazDatosPersona.textDireccion.getText();
+           telefono = interfazDatosPersona.textTelefono.getText();
+           edad = interfazDatosPersona.textEdad.getText();
+           correo = interfazDatosPersona.textCorreo.getText();
+           
+           
+           v.addElement(nombre);
+           v.addElement(apellido1);
+           v.addElement(apellido2);
+           v.addElement(dni);
+           v.addElement(direccion);
+           v.addElement(telefono);
+           v.addElement(edad);
+           v.addElement(correo);
+           
+           archivo.crearTxt("datos");
+           archivo.escribe(v);
+           System.out.println("Entraaaaa");
+           
+           
+        
+       }
+       
+       
+       //INTERFAZ AVION PARA AÑADIR VUELO
+       if (comando.equals("Aceptar vuelo")) {
+           
+            String idVuelo, idAvion, Origen, Destino, Salida, Llegada;
+            Vector v = new Vector();
+            int i = 0;
+            idVuelo = interfazAvion.textIdVuelo.getText();
+            idAvion = interfazAvion.textIdAvion.getText();
+            Origen = interfazAvion.textOrigen.getText();
+            Destino = interfazAvion.textDestino.getText();
+            Salida = interfazAvion.textSalida.getText();
+            Llegada = interfazAvion.textLLegada.getText();
+            
+            v.addElement(idVuelo);
+            v.addElement(idAvion);
+            v.addElement(Origen);
+            v.addElement(Destino);
+            v.addElement(Salida);
+            v.addElement(Llegada);
+            
+          
+            
+           
+           
+            archivo.crearTxt("login.txt");
+            archivo.escribe(v);
+            System.out.println("Saca vuelo");
+       }
+}
 }
