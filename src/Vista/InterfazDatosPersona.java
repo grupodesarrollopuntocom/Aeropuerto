@@ -43,7 +43,6 @@ public class InterfazDatosPersona extends javax.swing.JDialog {
         jLabel7 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextPane1 = new javax.swing.JTextPane();
-        btAceptarPersona = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         checkPiloto = new javax.swing.JRadioButton();
         checkCopiloto = new javax.swing.JRadioButton();
@@ -54,6 +53,7 @@ public class InterfazDatosPersona extends javax.swing.JDialog {
         textDireccion = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         textEdad = new javax.swing.JTextField();
+        btAceptarPersona = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -84,13 +84,6 @@ public class InterfazDatosPersona extends javax.swing.JDialog {
 
         jScrollPane1.setViewportView(jTextPane1);
 
-        btAceptarPersona.setText("Aceptarpersona");
-        btAceptarPersona.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btAceptarPersonaActionPerformed(evt);
-            }
-        });
-
         jButton4.setText("Limpiar");
 
         checkPiloto.setText("Piloto");
@@ -104,6 +97,8 @@ public class InterfazDatosPersona extends javax.swing.JDialog {
         jLabel9.setText("Direccion:");
 
         jLabel10.setText("Edad:");
+
+        btAceptarPersona.setText("Aceptar persona");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -147,16 +142,16 @@ public class InterfazDatosPersona extends javax.swing.JDialog {
                             .addComponent(ckechAzafata))
                         .addGap(72, 72, 72))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(103, 103, 103)
+                        .addGap(93, 93, 93)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(btAceptarPersona)
-                                .addGap(18, 18, 18)
+                                .addGap(64, 64, 64)
                                 .addComponent(jButton4)))
-                        .addContainerGap(24, Short.MAX_VALUE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -245,10 +240,6 @@ public class InterfazDatosPersona extends javax.swing.JDialog {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void btAceptarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAceptarPersonaActionPerformed
-               
-    }//GEN-LAST:event_btAceptarPersonaActionPerformed
 
     public String [] datosVector(){
         return new String[]{textNombre.getText(),textApellido1.getText(),textApellido2.getText(),textDni.getText(),textTelefono.getText()};

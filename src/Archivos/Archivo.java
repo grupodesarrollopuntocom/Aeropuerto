@@ -49,9 +49,7 @@ public class Archivo {
         
    }
     
-   
-    
-    public String leer(String nombre) throws FileNotFoundException, IOException{
+    public String leer(String nombre){
         
         
         File f;
@@ -94,19 +92,14 @@ public class Archivo {
         
         //for (int i = 0; i < v.size(); i++) {
             //System.out.println(v.get(i));
-            
-            
-            
         //}
         
-        try {
-            
+       try {
             fw = new FileWriter("archivo.txt");  //creo el flujo hacia f
             pw = new PrintWriter(fw); //permite la escritura
             
             for (int i = 0; i < v.size(); i++) {
-               
-                 pw.println(v.get(i));          //se introduce valor de i en el archivo
+               pw.println(v.get(i));          //se introduce valor de i en el archivo
             }
             
             fw.close();
@@ -117,5 +110,4 @@ public class Archivo {
         
     }
     
-    
- }
+}

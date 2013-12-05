@@ -54,9 +54,11 @@ public class Controlador implements ActionListener {
         this.registro.botonRegistroUsuario.setActionCommand("Registrar user");
         this.registro.botonRegistroUsuario.addActionListener(this);
         this.interfazDatosPersona.btAceptarPersona.setActionCommand("Aceptarpersona");
-        this.interfazDatosPersona.btAceptarPersona.addActionListener(this);
+       this.interfazDatosPersona.btAceptarPersona.addActionListener(this);
         this.interfazAvion.btAceptarVuelo.setActionCommand("Aceptar vuelo");
         this.interfazAvion.btAceptarVuelo.addActionListener(this);
+        this.principalVuelo.btLeer.setActionCommand("Lee");
+        this.principalVuelo.btLeer.addActionListener(this);
         
         
     }
@@ -84,7 +86,7 @@ public class Controlador implements ActionListener {
             
            
            
-            archivo.crearTxt("login.txt");
+            archivo.crearTxt("");
             modeloLogin.compruebaDatos(nombre, password);
             archivo.escribe(v);
             
@@ -114,6 +116,7 @@ public class Controlador implements ActionListener {
         
         //Acceso al boton registrar de la interfaz login
         if (comando.equals("Registrar")) {
+            
             registro.setVisible(true);
 
         }
@@ -145,7 +148,7 @@ public class Controlador implements ActionListener {
             v.addElement(correo);
            
             
-            archivo.crearTxt("registro.txt");
+            archivo.crearTxt("");
             archivo.escribe(v);
             System.out.println("Entra");
             /*
@@ -160,41 +163,47 @@ public class Controlador implements ActionListener {
 
         }
         
+        //PARA LEER
+        if (comando.equals("Lee")) {
+            
+            System.out.println(archivo.leer("archivo.txt"));
+        }
+        
         
         //INTERFAZ DATOS PERSONA
         
-       if (comando.equals("Aceptarpersona")) {
+      
+          if (comando.equals("Aceptarpersona")) {
+              
+              
+            String nombre, apellido1, apellido2, dni, telefono, direccion, correo, edad;
+            Vector v = new Vector();
+            
+            
+            nombre = interfazDatosPersona.textNombre.getText();
+            apellido1 = interfazDatosPersona.textApellido1.getText();
+            apellido2 = interfazDatosPersona.textApellido2.getText();
+            dni = interfazDatosPersona.textDireccion.getText();
+            telefono = interfazDatosPersona.textTelefono.getText();
+            direccion = interfazDatosPersona.textDireccion.getText();
+            edad = interfazDatosPersona.textEdad.getText();
+            correo = interfazDatosPersona.textCorreo.getText();
+
+            v.addElement(nombre);
+            v.addElement(apellido1);
+            v.addElement(apellido2);
+            v.addElement(dni);
+            v.addElement(telefono);
+            v.addElement(direccion);
+            v.addElement(edad);
+            v.addElement(correo);
            
-           String nombre, apellido1, apellido2, dni, telefono, direccion, edad, correo;
-           Vector v = new Vector();
-           
-           nombre = interfazDatosPersona.textNombre.getText();
-           apellido1 = interfazDatosPersona.textApellido1.getText();
-           apellido2 = interfazDatosPersona.textApellido2.getText();
-           dni = interfazDatosPersona.textDni.getText();
-           direccion = interfazDatosPersona.textDireccion.getText();
-           telefono = interfazDatosPersona.textTelefono.getText();
-           edad = interfazDatosPersona.textEdad.getText();
-           correo = interfazDatosPersona.textCorreo.getText();
-           
-           
-           v.addElement(nombre);
-           v.addElement(apellido1);
-           v.addElement(apellido2);
-           v.addElement(dni);
-           v.addElement(direccion);
-           v.addElement(telefono);
-           v.addElement(edad);
-           v.addElement(correo);
-           
-           archivo.crearTxt("datos");
-           archivo.escribe(v);
-           System.out.println("Entraaaaa");
-           
-           
-        
-       }
-       
+            
+            archivo.crearTxt("");
+            archivo.escribe(v);
+            System.out.println("Entraaaaaa");
+            
+          }
        
        //INTERFAZ AVION PARA AÑADIR VUELO
        if (comando.equals("Aceptar vuelo")) {
@@ -218,9 +227,7 @@ public class Controlador implements ActionListener {
             
           
             
-           
-           
-            archivo.crearTxt("login.txt");
+            archivo.crearTxt("");
             archivo.escribe(v);
             System.out.println("Saca vuelo");
        }
