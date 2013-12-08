@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 public class Controlador implements ActionListener {
     //VARIABLES DE APOYO
 
-    private String operacionBaseDatos;
+    private String operacionBaseDatos, dato;
     //INTERFACES
     private Login login;
     private Principal principal = new Principal();
@@ -63,7 +63,7 @@ public class Controlador implements ActionListener {
         this.iVuelo.horaLlegadaI.setText(null);
     }
 
-    public void comprobarInterfazVuelo(String operacion) {
+    public void comprobarInterfazVuelo(String operacion, String dato) {
         operacion = this.operacionBaseDatos;
         System.out.println(operacion);
         if (this.iVuelo.idVueloI.getText().equals("")
@@ -121,7 +121,11 @@ public class Controlador implements ActionListener {
                         this.modeloTablaVuelo.anadirFila(lista);
                         this.bd.ingresaDatosVuelo(this.modeloVuelo);
                     } else if (operacion.equals("actualizarBD")) {
-                        this.bd.actulizaFila(this.modeloVuelo, String.valueOf(this.modeloVuelo.getIdVuelo()));
+                        int seleccion = this.principal.tablaVuelo.getSelectedRow();
+                        this.modeloTablaVuelo.borrarFila(seleccion);
+                        this.bd.actulizaFila(this.modeloVuelo, this.dato);
+                        this.modeloTablaVuelo.anadirFila(lista);
+                        ///NO SE QUE HACER PARA ACTUALIZAR LA TABLA 
                     }
                     borraInterfazVuelo();
                     this.iVuelo.dispose();
@@ -209,12 +213,13 @@ public class Controlador implements ActionListener {
                 this.iVuelo.horaLlegadaI.setText(this.modeloVuelo.getHoraLLegada());
                 this.iVuelo.horaSalidaI.setText(this.modeloVuelo.getHoraSalida());
                 this.operacionBaseDatos = "actualizarBD";
+                this.dato = String.valueOf(this.modeloVuelo.getIdVuelo());
                 this.posicionVuelo();
             }
         }
         //INTERFAZ VUELO
         if (comando.equals("AceptarVuelo")) {
-            this.comprobarInterfazVuelo(this.operacionBaseDatos);
+            this.comprobarInterfazVuelo(this.operacionBaseDatos,this.dato);
         }
         if (comando.equals("BorrarDatosVuelo")) {
             this.borraInterfazVuelo();
