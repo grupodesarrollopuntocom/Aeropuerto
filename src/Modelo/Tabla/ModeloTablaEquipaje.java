@@ -4,19 +4,19 @@ import Modelo.JDBC.BaseDatos;
 import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
 
-public class ModeloTablaVuelo extends AbstractTableModel {
+public class ModeloTablaEquipaje extends AbstractTableModel {
 
     private BaseDatos bd;
     ArrayList datosVuelo = new ArrayList();
-    String[] nombreColumnas = new String[]{"IdVuelo", "IdAvion", "Origen", "Destino", "Hora de Salida", "Hora de Llegada"};
-    Class[] type = new Class[]{java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class};
+    String[] nombreColumnas = new String[]{"IdEquipaje", "Descripcion", "Peso", "Dimensiones"};
+    Class[] type = new Class[]{java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class};
 
-    public ModeloTablaVuelo() {
+    public ModeloTablaEquipaje() {
         bd = new BaseDatos();
-        Object[][] pica = new String[bd.consultaTablaVuelo().length][6];
-        pica = bd.consultaTablaVuelo();
+        Object[][] pica = new String[bd.consultaTablaEquipaje().length][4];
+        pica = bd.consultaTablaEquipaje();
         for (int i = 0; i < pica.length; i++) {
-                datosVuelo.add(new String[]{pica[i][0].toString(), pica[i][1].toString(), pica[i][2].toString(), pica[i][3].toString(), pica[i][4].toString(), pica[i][5].toString()});    
+                datosVuelo.add(new String[]{pica[i][0].toString(), pica[i][1].toString(), pica[i][2].toString(), pica[i][3].toString()});    
         }
     }
 
